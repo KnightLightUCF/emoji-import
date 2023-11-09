@@ -42,7 +42,7 @@ def draw_emoji():
 
         emoji_size = 200
     # Set the font file that supports emoji font
-        emoji_font = ImageFont.truetype('/Users/stevenholmes/Documents/Emoji_Import_KnightLight/emoji-import/emoji-import/NotoEmoji-VariableFont_wght.ttf', size=emoji_size)  # Adjust the font size as needed
+        emoji_font = ImageFont.truetype('/Users/stevenholmes/OneDrive/Knight_Light 11.1.2023/emoji-import/emoji-import/NotoEmoji-VariableFont_wght.ttf', size=emoji_size)  # Adjust the font size as needed
 
         # emoji_width, emoji_height = emoji_font.getsize(emoji_text)
 
@@ -70,7 +70,7 @@ def draw_emoji():
         image_array = np.array(image)
         
         # Detects edges within image to, the lower the threshold the sharper the image
-        edges = cv2.Canny(image_array, threshold1=50, threshold2=50)
+        edges = cv2.Canny(image_array, threshold1=10, threshold2=10)
 
         vertices = []
         height = 0.0
@@ -98,7 +98,7 @@ root.title("Knight Light Drone Emojis")
 root.iconbitmap('UCF_Logo.ico')
 
 # Importing image for GUI
-image_UCF = Image.open('/Users/stevenholmes/Documents/Emoji_Import_KnightLight/emoji-import/emoji-import/Knightlight_MD_1.png').resize((450,325))
+image_UCF = Image.open('/Users/stevenholmes/OneDrive/Knight_Light 11.1.2023/emoji-import/emoji-import/Knightlight_MD_1.png').resize((450,325))
 image_tk = ImageTk.PhotoImage(image_UCF)
 label = ttk.Label(root, text = "UCF Logo", image = image_tk)
 label.pack()
